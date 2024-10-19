@@ -11,5 +11,5 @@ java {
 
 dependencies {
     api(libs.kotlinx.serialization)
-    api(project(":entity"))
+    ///api(project(":entity"))
 }

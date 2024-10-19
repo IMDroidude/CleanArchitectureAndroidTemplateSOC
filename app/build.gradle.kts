@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    alias(libs.plugins.androidx.navigation.safeargs)
+    alias(libs.plugins.google.devtools.ksp)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.jetbrains.kotlin.plugin.compose)
 }
 
 android {
@@ -66,6 +71,10 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     implementation(project(":data"))
     implementation(project(":domain"))

@@ -1,6 +1,6 @@
 [versions]
 agp = "8.6.1"
-kotlin = "1.9.0"
+kotlin = "2.0.20" #kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -8,7 +8,6 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.3"
 composeBom = "2024.10.00"
-jetbrainsKotlinJvm = "1.9.0"
 appcompat = "1.7.0"
 material = "1.12.0"
 
@@ -17,6 +16,11 @@ retrofit = "2.11.0"
 okhttp = "4.12.0"
 kotlinSerializationConverter = "2.11.0"
 kotlinSerialization = "1.7.1"
+
+hilt = "2.52"
+google-services = "4.4.2"
+navigation = "2.8.3"
+ksp = "2.0.20-1.0.25" #"2.0.0-1.0.22" -- 2.0.20-1.0.25
 
 
 [libraries]
@@ -44,10 +48,31 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
+#Hilt
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 
 [plugins]
+#Android
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+
+#Jetbrain
+
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+jetbrains-kotlin-plugin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+#Google
+googlegms-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+#Navigation
+androidx-navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation" }
+
+#Hilt
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+
+
