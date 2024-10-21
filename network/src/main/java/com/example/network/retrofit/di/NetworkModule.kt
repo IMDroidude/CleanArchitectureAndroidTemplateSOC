@@ -53,7 +53,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideZindigiApiV1Service(retrofit: Retrofit): ApiService =
+    fun provideApiService(retrofit: Retrofit): ApiService =
         retrofit.create(ApiService::class.java)
 }
 
