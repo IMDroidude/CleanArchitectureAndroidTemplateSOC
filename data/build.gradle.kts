@@ -48,5 +48,5 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(project(":domain"))
-    implementation(project(":network"))
+    api(project(":network"))
 }

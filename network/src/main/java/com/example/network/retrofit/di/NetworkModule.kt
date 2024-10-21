@@ -26,9 +26,9 @@ object NetworkModule {
         configProvider: NetworkConfigurationProvider,
     ): OkHttpClient {
         val builder = OkHttpClient.Builder()
-        configProvider.getInterceptors().forEach {
-            builder.addInterceptor(it)
-        }
+//        configProvider.getInterceptors().forEach {
+//            builder.addInterceptor(it)
+//        }
         builder.connectTimeout(2, TimeUnit.MINUTES)
             .readTimeout(2, TimeUnit.MINUTES)
             .writeTimeout(2, TimeUnit.MINUTES)

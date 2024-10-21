@@ -6,6 +6,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LoginRequestDTO(
-    @SerialName("MobileNo") var mobileNo: String? = "",
-    @SerialName("Password") var password: String? = "",
+    @SerialName("email") var mobileNo: String? = "",
+    @SerialName("password") var password: String? = "",
 ) : NetworkModel

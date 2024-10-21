@@ -9,6 +9,8 @@ class LoginResponseMapper @Inject constructor(
 
 ): DomainMapper<LoginResponseDTO,LoginResponseEntity> {
     override fun mapToDomainModel(model: LoginResponseDTO): LoginResponseEntity {
-        return LoginResponseEntity(responseCode = model.responseCode, responseDescription = model.responseDescription)
+        return LoginResponseEntity(responseCode = model.responseCode
+        ///    , responseDescription = model.responseDescription
+        )
     }
 }

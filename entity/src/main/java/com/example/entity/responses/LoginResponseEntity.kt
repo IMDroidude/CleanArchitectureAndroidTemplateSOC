@@ -1,3 +1,8 @@
 package com.example.entity.responses
 
-data class LoginResponseEntity(val responseCode: String, val responseDescription: String)
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class LoginResponseEntity(val responseCode: String
+///, val responseDescription: String
+)

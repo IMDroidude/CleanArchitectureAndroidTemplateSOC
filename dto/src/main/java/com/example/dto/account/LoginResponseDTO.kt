@@ -6,9 +6,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LoginResponseDTO(
-    @SerialName("ResponseCode")
+    ///@SerialName("ResponseCode")
+    @SerialName("token")
     val responseCode: String,
-    @SerialName("ResponseDescription")
-    val responseDescription: String,
+//    @SerialName("ResponseDescription")
+//    val responseDescription: String,
 ) : NetworkModel
 

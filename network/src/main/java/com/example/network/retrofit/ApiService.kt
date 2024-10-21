@@ -9,6 +9,7 @@ import retrofit2.http.POST
 // FIXME: create ApiService for each feature separately... 
 interface ApiService {
 
-    @POST("Account/LoginAuthentication")
+    ///@POST("Account/LoginAuthentication")
+    @POST("api/login")
     suspend fun loginAuthentication(@Body request: LoginRequestDTO): Response<LoginResponseDTO>
 }
