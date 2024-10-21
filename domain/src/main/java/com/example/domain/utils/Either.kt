@@ -11,4 +11,11 @@ sealed class Either<out L, out R> {
         fun <L> left(a: L) = Left(a)
         fun <R> right(b: R) = Right(b)
     }
+
+    inline fun <T> map(transform: (R) -> T): Either<L, T> {
+        return when (this) {
+            is Left -> this // Return Left unchanged
+            is Right -> Right(transform(this.success)) // Apply transform to Right's success
+        }
+    }
 }

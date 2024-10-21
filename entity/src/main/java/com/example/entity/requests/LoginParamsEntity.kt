@@ -1,3 +1,3 @@
 package com.example.entity.requests
 
-data class LoginParamsEntity(val username: String, val password: String)
+data class LoginParamsEntity(val mobile: String? = "", val password: String? = "")

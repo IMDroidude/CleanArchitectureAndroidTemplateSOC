@@ -2,12 +2,11 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
 
-    alias(libs.plugins.hilt.android)
-    alias(libs.plugins.google.devtools.ksp)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.example.data"
+    namespace = "com.example.common"
     compileSdk = 34
 
     defaultConfig {
@@ -44,9 +43,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    api(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-
-    implementation(project(":domain"))
-    implementation(project(":network"))
+    implementation(libs.kotlinx.serialization)
 }
