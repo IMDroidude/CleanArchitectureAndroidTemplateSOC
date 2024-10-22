@@ -13,5 +13,5 @@ dependencies {
 
     api(libs.kotlinx.coroutines)
 
-    api(project(":entity"))
+    api(project(":model:entity"))
 }

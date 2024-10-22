@@ -53,6 +53,6 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    api(project(":dto"))
+    api(project(":model:dto"))
     api(project(":common"))
 }
