@@ -4,7 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.clearnarchitectureandroidtemplate.base.BaseViewModel
 import com.example.domain.usecases.LoginUseCase
 import com.example.domain.utils.Either
-import com.example.entity.requests.LoginParamsEntity
+import com.example.entity.requests.LoginRequestEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,7 +16,7 @@ class MainViewModel @Inject constructor(
 ) : BaseViewModel(){
 
     fun login() = viewModelScope.launch (Dispatchers.IO) {
-        val mResp = loginUseCase.invoke(LoginParamsEntity(
+        val mResp = loginUseCase.invoke(LoginRequestEntity(
             mobile = "eve.holt@reqres.in",
             password = "cityslicka"
         ))

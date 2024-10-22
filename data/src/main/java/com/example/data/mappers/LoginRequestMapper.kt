@@ -2,14 +2,14 @@ package com.example.data.mappers
 
 import com.example.data.base.DomainMapper
 import com.example.dto.account.LoginRequestDTO
-import com.example.entity.requests.LoginParamsEntity
+import com.example.entity.requests.LoginRequestEntity
 import javax.inject.Inject
 
 class LoginRequestMapper @Inject constructor(
 
-): DomainMapper<LoginParamsEntity, LoginRequestDTO> {
+): DomainMapper<LoginRequestEntity, LoginRequestDTO> {
 
-    override fun mapToDomainModel(model: LoginParamsEntity): LoginRequestDTO {
+    override fun mapToDomainModel(model: LoginRequestEntity): LoginRequestDTO {
         return LoginRequestDTO(
             mobileNo = model.mobile,
             password = model.password

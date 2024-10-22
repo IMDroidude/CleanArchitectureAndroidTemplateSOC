@@ -3,6 +3,7 @@ package com.example.domain.base
 import com.example.domain.exceptions.Failure
 import com.example.domain.utils.Either
 
+// FIXME: it's better to go with Flow in BaseUseCase.
 abstract class BaseUseCase<ResultType, in ParamsType> {
     abstract suspend fun execute(params: ParamsType): Either<Failure, ResultType>
 
