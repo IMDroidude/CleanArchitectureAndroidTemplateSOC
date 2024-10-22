@@ -11,5 +11,7 @@ java {
 dependencies {
     api(libs.javax.inject)
 
+    api(libs.kotlinx.coroutines)
+
     api(project(":entity"))
 }

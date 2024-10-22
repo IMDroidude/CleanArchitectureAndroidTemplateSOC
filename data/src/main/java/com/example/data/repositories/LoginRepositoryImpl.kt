@@ -8,8 +8,25 @@ import com.example.domain.repositories.LoginRepository
 import com.example.domain.utils.Either
 import com.example.entity.requests.LoginRequestEntity
 import com.example.entity.responses.LoginResponseEntity
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
+class LoginRepositoryImpl @Inject constructor(
+    private val loginDataSource: LoginDataSource,
+    private val loginRequestMapper: LoginRequestMapper,
+    private val loginResponseMapper: LoginResponseMapper
+) : LoginRepository {
+
+    override fun login(params: LoginRequestEntity): Flow<Either<Failure, LoginResponseEntity>> {
+        val loginRequestDTO = loginRequestMapper.mapToDomainModel(params)
+        return loginDataSource.login(loginRequestDTO)
+            .map { result ->
+                result.map { loginResponseMapper.mapToDomainModel(it) }
+            }
+    }
+}
+/*
 class LoginRepositoryImpl @Inject constructor(
     private var loginDataSource: LoginDataSource,
     private val loginRequestMapper: LoginRequestMapper,
@@ -23,4 +40,4 @@ class LoginRepositoryImpl @Inject constructor(
         // Map data DTO to domain entity and return
         return result.map { loginResponseMapper.mapToDomainModel(it) }
     }
-}
+}*/
