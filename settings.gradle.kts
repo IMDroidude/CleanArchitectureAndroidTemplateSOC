@@ -21,8 +21,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "ClearnArchitectureAndroidTemplate"
 include(":app")
-include(":domain")
-include(":data")
+include(":core:domain")
+include(":core:data")
 include(":network")
 include(":dto")
 include(":entity")
