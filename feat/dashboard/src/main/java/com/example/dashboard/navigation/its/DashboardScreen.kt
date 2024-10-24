@@ -1,4 +1,4 @@
-package com.example.auth.ui.login
+package com.example.dashboard.navigation.its
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -7,29 +7,25 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
-fun LoginRoute(
+internal fun DashboardRoute(
     modifier: Modifier = Modifier,
-    viewModel: LoginScreenViewModel = hiltViewModel(),
-    onLoginSuccess: () -> Unit,
+    viewModel: DashboardViewModel = hiltViewModel(),
+    onRouteSelected: (String) -> Unit = {}
 ) {
-    val loginUiState by viewModel.uiState.collectAsStateWithLifecycle()
-    LoginScreen(
-        loginUiState = loginUiState,
-        onLoginSuccess = onLoginSuccess
+    DashboardScreen(
+        modifier = modifier,
+        onRouteSelected = onRouteSelected
     )
 }
 
 @Composable
-internal fun LoginScreen(
+fun DashboardScreen(
     modifier: Modifier = Modifier,
-    loginUiState: LoginUiState,
-    onLoginSuccess: (() -> Unit)? = null
+    onRouteSelected: (String) -> Unit = {}
 ) {
     Column(
         modifier = modifier
@@ -38,11 +34,11 @@ internal fun LoginScreen(
     ) {
         Button(
             onClick = {
-                onLoginSuccess?.invoke()
+
             },
             shape = MaterialTheme.shapes.small
         ) {
-            Text("Login Clicked")
+            Text("Dashbaord Clicked")
         }
     }
 }

@@ -88,9 +88,17 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     // for rememberBottomSheetNavigator
-    implementation(libs.material)
+    ///implementation(libs.material)
 
     api(project(":core:data"))
     implementation(project(":feat:auth"))
+    implementation(project(":feat:dashboard"))
     ///implementation(project(":core:domain"))
+
+//    val accompanist = "0.24.2-alpha"
+//
+//    implementation("com.google.accompanist:accompanist-navigation-material:$accompanist")
+//    implementation("com.google.accompanist:accompanist-insets:$accompanist")
+//
+//    implementation("androidx.compose.material:material:1.7.4")
 }

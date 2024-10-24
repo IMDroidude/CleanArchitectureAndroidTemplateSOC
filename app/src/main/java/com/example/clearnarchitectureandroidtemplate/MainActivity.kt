@@ -14,15 +14,12 @@ import com.example.clearnarchitectureandroidtemplate.ui.theme.ClearnArchitecture
 import com.example.clearnarchitectureandroidtemplate.ui.views.AppScaffold
 import dagger.hilt.android.AndroidEntryPoint
 
-///import androidx.compose.material.navigation.rememberBottomSheetNavigator
-
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-//            val bottomSheetNavigator = rememberBottomSheetNavigator()
             val navController = rememberNavController()
             val appState = rememberAppState(
                 navController = navController,
