@@ -42,6 +42,7 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -55,6 +56,8 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.androidx.appcompat)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -76,6 +79,18 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    implementation(project(":core:data"))
-    implementation(project(":core:domain"))
+    //Navigation
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.navigation.dynamic)
+
+    //put it in common-feat using api
+    implementation(libs.androidx.navigation.compose)
+
+    // for rememberBottomSheetNavigator
+    implementation(libs.material)
+
+    api(project(":core:data"))
+    implementation(project(":feat:auth"))
+    ///implementation(project(":core:domain"))
 }

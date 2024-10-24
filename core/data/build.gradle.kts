@@ -47,6 +47,6 @@ dependencies {
     api(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    implementation(project(":core:domain"))
+    api(project(":core:domain"))
     api(project(":network"))
 }
